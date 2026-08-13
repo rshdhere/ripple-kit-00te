@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "ripple-kit-00te",
-  description: "make me a todo-app using nextjs",
+  title: "Todo App | Ripple Kit",
+  description: "A clean todo app built with Next.js — add, complete, and manage tasks.",
 };
 
 export default function RootLayout({
@@ -12,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body>{children}</body>
     </html>
   );
